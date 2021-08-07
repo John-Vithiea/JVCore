@@ -83,7 +83,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "/Users/vithiea/Desktop/MyPods/JVTest.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/John-Vithiea/JVCore.git", :tag => "#{spec.version}" }
 
   spec.platform = :ios
   spec.ios.deployment_target = '10.0'
@@ -102,7 +102,7 @@ Pod::Spec.new do |spec|
 
   # spec.public_header_files = "Classes/**/*.h"
 
-  spec.vendored_frameworks = "JVTest.framework"
+  spec.vendored_frameworks = "JVCore.framework"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
