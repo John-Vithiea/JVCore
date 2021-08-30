@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "JVCore"
-  spec.version      = "0.0.1"
+  spec.version      = "0.1.0"
   spec.summary      = "The core framework of JV frameworks."
 
   # This description is used to generate tags and improve search results.
@@ -102,7 +102,7 @@ Pod::Spec.new do |spec|
 
   # spec.public_header_files = "JVCore.xcframework/Headers/*.h"
 
-  spec.vendored_frameworks = "JVCore.xcframework"
+  spec.ios.vendored_frameworks = "JVCore.xcframework"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

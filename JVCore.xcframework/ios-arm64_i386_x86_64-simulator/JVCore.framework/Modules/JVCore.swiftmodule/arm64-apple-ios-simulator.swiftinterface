@@ -128,12 +128,61 @@ extension Collection {
     get
   }
 }
-public func getValuePlist(name: Swift.String, key: Swift.String) -> Any
+public func getValuePlist(name: Swift.String, key: Swift.String, bundle: Foundation.Bundle? = Bundle.main) -> Any?
 public func removeShadowNavigationBar()
+public struct JVDate {
+  public let date: Foundation.Date?
+  public var dateTime: Swift.String {
+    get
+  }
+  public var shortDate: Swift.String {
+    get
+  }
+  public var shortMonth: Swift.String {
+    get
+  }
+  public func format(_ format: Swift.String) -> Swift.String
+  public init()
+  public init(_ date: Foundation.Date)
+  public init(_ string: Swift.String)
+  public init(short: Swift.String)
+}
+extension Date {
+  public func next(_ weekday: Foundation.Date.Weekday, considerToday: Swift.Bool = false) -> Foundation.Date
+  public func previous(_ weekday: Foundation.Date.Weekday, considerToday: Swift.Bool = false) -> Foundation.Date
+  public func get(_ direction: Foundation.Date.SearchDirection, _ weekDay: Foundation.Date.Weekday, considerToday consider: Swift.Bool = false) -> Foundation.Date
+  public func getWeekDaysInEnglish() -> [Swift.String]
+  public enum Weekday : Swift.String {
+    case monday, tuesday, wednesday, thursday, friday, saturday, sunday
+    public typealias RawValue = Swift.String
+    public init?(rawValue: Swift.String)
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum SearchDirection {
+    case Next
+    case Previous
+    public var calendarSearchDirection: Foundation.Calendar.SearchDirection {
+      get
+    }
+    public static func == (a: Foundation.Date.SearchDirection, b: Foundation.Date.SearchDirection) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+}
 extension Date {
   public func toString(format: Swift.String = "yyyy-MM-dd") -> Swift.String
   public func isBetweenDate(_ beginDate: Foundation.Date?, andDate endDate: Foundation.Date?) -> Swift.Bool
   public func dateOnly(format: Swift.String = "yyyy-MM-dd") -> Foundation.Date
+}
+public struct Device {
+  public static let isPhone: Swift.Bool
+  public static let isPad: Swift.Bool
+  public static let version: Swift.String
+  public static let model: Swift.String
 }
 @objc @_inheritsConvenienceInitializers public class JVKeychain : ObjectiveC.NSObject {
   public class func defaultQuery() -> [Swift.String : Any]
@@ -205,14 +254,13 @@ extension UIViewController {
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
-extension UIDevice {
-  public static let isIphone: Swift.Bool
-  public static let isIpad: Swift.Bool
-  public static let osVersion: Swift.String
-  public static let modelName: Swift.String
-}
 extension JVCore.ErrorType : Swift.Equatable {}
 extension JVCore.ErrorType : Swift.Hashable {}
+extension Foundation.Date.Weekday : Swift.Equatable {}
+extension Foundation.Date.Weekday : Swift.Hashable {}
+extension Foundation.Date.Weekday : Swift.RawRepresentable {}
+extension Foundation.Date.SearchDirection : Swift.Equatable {}
+extension Foundation.Date.SearchDirection : Swift.Hashable {}
 extension UIKit.UIImage.CompressionQuality : Swift.Equatable {}
 extension UIKit.UIImage.CompressionQuality : Swift.Hashable {}
 extension UIKit.UIImage.CompressionQuality : Swift.RawRepresentable {}
