@@ -182,6 +182,7 @@ public struct Device {
   public static let isPhone: Swift.Bool
   public static let isPad: Swift.Bool
   public static let version: Swift.String
+  public static let id: Swift.String
   public static let model: Swift.String
 }
 @objc @_inheritsConvenienceInitializers public class JVKeychain : ObjectiveC.NSObject {
