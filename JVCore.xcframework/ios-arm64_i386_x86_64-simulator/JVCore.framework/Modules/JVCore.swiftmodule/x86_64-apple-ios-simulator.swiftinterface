@@ -87,25 +87,25 @@ extension String {
   public func toDate(format: Swift.String = "yyyy-MM-dd") -> Foundation.Date?
   public func reformatDate(oldFormat: Swift.String = "yyyy-MM-dd", newFormat: Swift.String) -> Swift.String
 }
-public enum ErrorType {
+public enum JVErrorType {
   case data
   case network
   case general
   case none
   public init()
-  public static func == (a: JVCore.ErrorType, b: JVCore.ErrorType) -> Swift.Bool
+  public static func == (a: JVCore.JVErrorType, b: JVCore.JVErrorType) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
   }
   public func hash(into hasher: inout Swift.Hasher)
 }
-public struct MyError {
+public struct JVError {
   public let message: Swift.String
   public let code: Swift.Int
   public let title: Swift.String
   public let url: Swift.String
-  public let type: JVCore.ErrorType
-  public init(title: Swift.String = "", url: Swift.String = "", code: Swift.Int, msg: Swift.String, type: JVCore.ErrorType = ErrorType())
+  public let type: JVCore.JVErrorType
+  public init(title: Swift.String = "", url: Swift.String = "", code: Swift.Int, msg: Swift.String, type: JVCore.JVErrorType = JVErrorType())
   public init(url: Swift.String, error: Swift.Error)
   public func log(title: Swift.String = "")
 }
@@ -254,8 +254,8 @@ extension UIViewController {
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
-extension JVCore.ErrorType : Swift.Equatable {}
-extension JVCore.ErrorType : Swift.Hashable {}
+extension JVCore.JVErrorType : Swift.Equatable {}
+extension JVCore.JVErrorType : Swift.Hashable {}
 extension Foundation.Date.Weekday : Swift.Equatable {}
 extension Foundation.Date.Weekday : Swift.Hashable {}
 extension Foundation.Date.Weekday : Swift.RawRepresentable {}
