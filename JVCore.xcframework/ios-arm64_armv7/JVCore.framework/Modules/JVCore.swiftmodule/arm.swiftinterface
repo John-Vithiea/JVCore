@@ -1,24 +1,26 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
 // swift-module-flags: -target armv7-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name JVCore
 import Foundation
 @_exported import JVCore
 import Swift
 import UIKit
-extension UILabel {
-  public func underlineText()
-  public func underlineText(_ texts: [Swift.String], color: UIKit.UIColor = UIColor(red: 0, green: 0, blue: 0.933, alpha: 1.0), link: Swift.String? = nil)
-  public func setLineSpace(_ space: CoreGraphics.CGFloat = 2.0)
+import _Concurrency
+extension UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) public func underlineText()
+  @_Concurrency.MainActor(unsafe) public func underlineText(_ texts: [Swift.String], color: UIKit.UIColor = UIColor(red: 0, green: 0, blue: 0.933, alpha: 1.0), link: Swift.String? = nil)
+  @_Concurrency.MainActor(unsafe) public func setLineSpace(_ space: CoreGraphics.CGFloat = 2.0)
 }
-extension UIApplication {
-  public func setRootViewController(_ id: Swift.String, storyboard: UIKit.UIStoryboard = UIStoryboard.main)
-  public func reloadApp()
-  public func increaseNotificationBadge()
-  public func decreaseNotificationBadge()
-  public func getNotificationBadges() -> Swift.String
-  public func resetNotificationBadge()
+extension UIKit.UIApplication {
+  @_Concurrency.MainActor(unsafe) public func setRootViewController(_ id: Swift.String, storyboard: UIKit.UIStoryboard = UIStoryboard.main)
+  @_Concurrency.MainActor(unsafe) public func setRootViewController(_ viewController: UIKit.UIViewController, storyboard: UIKit.UIStoryboard = UIStoryboard.main)
+  @_Concurrency.MainActor(unsafe) public func reloadApp()
+  @_Concurrency.MainActor(unsafe) public func increaseNotificationBadge()
+  @_Concurrency.MainActor(unsafe) public func decreaseNotificationBadge()
+  @_Concurrency.MainActor(unsafe) public func getNotificationBadges() -> Swift.String
+  @_Concurrency.MainActor(unsafe) public func resetNotificationBadge()
 }
-extension FileManager {
+extension Foundation.FileManager {
   @discardableResult
   public func caches(_ filename: Swift.String, content: Swift.String) -> Swift.Bool
   public func getCachedContents(_ filename: Swift.String) -> Swift.String
@@ -31,6 +33,9 @@ extension FileManager {
   @discardableResult
   public func deletes(path: Swift.String) -> Swift.Bool
 }
+extension UIKit.UITextView {
+  @_Concurrency.MainActor(unsafe) public func setLineSpace(_ space: CoreGraphics.CGFloat = 2.0, attributedText: Foundation.NSAttributedString? = nil)
+}
 public let APP_NAME: Swift.String
 public let APP_BUILD: Swift.String
 public let APP_ID: Swift.String
@@ -41,14 +46,14 @@ public var APP_BUILD_NUMBER: Swift.String {
 public var DEVICE_ID: Swift.String {
   get
 }
-extension UITextField {
-  public var isBlank: Swift.Bool {
+extension UIKit.UITextField {
+  @_Concurrency.MainActor(unsafe) public var isBlank: Swift.Bool {
     get
   }
-  public func trimText() -> Swift.String
-  public func setPlaceholder(color: UIKit.UIColor)
+  @_Concurrency.MainActor(unsafe) public func trimText() -> Swift.String
+  @_Concurrency.MainActor(unsafe) public func setPlaceholder(color: UIKit.UIColor)
 }
-extension String {
+extension Swift.String {
   public var toInt: Swift.Int {
     get
   }
@@ -94,10 +99,10 @@ public enum JVErrorType {
   case none
   public init()
   public static func == (a: JVCore.JVErrorType, b: JVCore.JVErrorType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 public struct JVError {
   public let message: Swift.String
@@ -109,15 +114,15 @@ public struct JVError {
   public init(url: Swift.String, error: Swift.Error)
   public func log(title: Swift.String = "")
 }
-extension UINavigationController {
-  public func enableTranparent()
-  public func disableTranparent(barColor: UIKit.UIColor)
-  public func controller<T>(type: T.Type) -> UIKit.UIViewController
+extension UIKit.UINavigationController {
+  @_Concurrency.MainActor(unsafe) public func enableTranparent()
+  @_Concurrency.MainActor(unsafe) public func disableTranparent(barColor: UIKit.UIColor)
+  @_Concurrency.MainActor(unsafe) public func controller<T>(type: T.Type) -> UIKit.UIViewController
 }
-extension UINavigationItem {
-  public func setTitle(_ title: Swift.String, color: UIKit.UIColor, font: UIKit.UIFont)
+extension UIKit.UINavigationItem {
+  @_Concurrency.MainActor(unsafe) public func setTitle(_ title: Swift.String, color: UIKit.UIColor, font: UIKit.UIFont)
 }
-extension Collection {
+extension Swift.Collection {
   public subscript(safe index: Self.Index) -> Self.Element? {
     get
   }
@@ -129,7 +134,9 @@ extension Collection {
   }
 }
 public func getValuePlist(name: Swift.String, key: Swift.String, bundle: Foundation.Bundle? = Bundle.main) -> Any?
+@available(*, deprecated, message: "This does not work in iOS 15. It will be removed in the future. Use UINavigationBarAppearance instead")
 public func removeShadowNavigationBar()
+public func getP12(name: Swift.String, password: Swift.String) -> CoreFoundation.CFArray?
 public struct JVDate {
   public let date: Foundation.Date?
   public var dateTime: Swift.String {
@@ -147,15 +154,15 @@ public struct JVDate {
   public init(_ string: Swift.String)
   public init(short: Swift.String)
 }
-extension Date {
+extension Foundation.Date {
   public func next(_ weekday: Foundation.Date.Weekday, considerToday: Swift.Bool = false) -> Foundation.Date
   public func previous(_ weekday: Foundation.Date.Weekday, considerToday: Swift.Bool = false) -> Foundation.Date
   public func get(_ direction: Foundation.Date.SearchDirection, _ weekDay: Foundation.Date.Weekday, considerToday consider: Swift.Bool = false) -> Foundation.Date
   public func getWeekDaysInEnglish() -> [Swift.String]
   public enum Weekday : Swift.String {
     case monday, tuesday, wednesday, thursday, friday, saturday, sunday
-    public typealias RawValue = Swift.String
     public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
     }
@@ -167,13 +174,13 @@ extension Date {
       get
     }
     public static func == (a: Foundation.Date.SearchDirection, b: Foundation.Date.SearchDirection) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
-    public func hash(into hasher: inout Swift.Hasher)
   }
 }
-extension Date {
+extension Foundation.Date {
   public func toString(format: Swift.String = "yyyy-MM-dd") -> Swift.String
   public func isBetweenDate(_ beginDate: Foundation.Date?, andDate endDate: Foundation.Date?) -> Swift.Bool
   public func dateOnly(format: Swift.String = "yyyy-MM-dd") -> Foundation.Date
@@ -196,28 +203,31 @@ public struct Device {
   public class func loadData(key: Swift.String) -> Foundation.Data?
   public class func loadString(key: Swift.String) -> Swift.String
   public class func loadBool(key: Swift.String) -> Swift.Bool
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
-extension UIStoryboard {
-  public static var main: UIKit.UIStoryboard {
+extension UIKit.UIStoryboard {
+  @_Concurrency.MainActor(unsafe) public static var main: UIKit.UIStoryboard {
     get
   }
 }
-extension UIView {
-  public var parentController: UIKit.UIViewController? {
+extension UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public static var className: Swift.String {
     get
   }
-  public func rounded()
-  public func rounds(radius: CoreGraphics.CGFloat, borderColor: UIKit.UIColor = UIColor.clear, width: CoreGraphics.CGFloat = 1.0)
-  public func addBorder(color: UIKit.UIColor, width: CoreGraphics.CGFloat = 1.0)
-  public func addShadow(offset: CoreGraphics.CGSize, radius: CoreGraphics.CGFloat = 1.0, opacity: Swift.Float = 0.3)
-  public func indexPathIn(tableView: UIKit.UITableView) -> Foundation.IndexPath?
-  public func indexPathIn(collectionView: UIKit.UICollectionView) -> Foundation.IndexPath?
-  public func fillParent()
-  public func constraintToView(sndView: UIKit.UIView, left: CoreGraphics.CGFloat, right: CoreGraphics.CGFloat, top: CoreGraphics.CGFloat, bottom: CoreGraphics.CGFloat)
+  @_Concurrency.MainActor(unsafe) public var parentController: UIKit.UIViewController? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public func rounded()
+  @_Concurrency.MainActor(unsafe) public func rounds(radius: CoreGraphics.CGFloat, borderColor: UIKit.UIColor = UIColor.clear, width: CoreGraphics.CGFloat = 1.0)
+  @_Concurrency.MainActor(unsafe) public func addBorder(color: UIKit.UIColor, width: CoreGraphics.CGFloat = 1.0)
+  @_Concurrency.MainActor(unsafe) public func addShadow(offset: CoreGraphics.CGSize, radius: CoreGraphics.CGFloat = 1.0, opacity: Swift.Float = 0.3)
+  @_Concurrency.MainActor(unsafe) public func indexPathIn(tableView: UIKit.UITableView) -> Foundation.IndexPath?
+  @_Concurrency.MainActor(unsafe) public func indexPathIn(collectionView: UIKit.UICollectionView) -> Foundation.IndexPath?
+  @_Concurrency.MainActor(unsafe) public func fillParent()
+  @_Concurrency.MainActor(unsafe) public func constraintToView(sndView: UIKit.UIView, left: CoreGraphics.CGFloat, right: CoreGraphics.CGFloat, top: CoreGraphics.CGFloat, bottom: CoreGraphics.CGFloat)
 }
-extension UIImage {
+extension UIKit.UIImage {
   public func addBorder(width: CoreGraphics.CGFloat = 1.0, color: UIKit.UIColor = .lightGray) -> UIKit.UIImage?
   public func color(_ color: UIKit.UIColor) -> UIKit.UIImage
   public enum CompressionQuality : CoreGraphics.CGFloat {
@@ -226,8 +236,8 @@ extension UIImage {
     case medium
     case high
     case highest
-    public typealias RawValue = CoreGraphics.CGFloat
     public init?(rawValue: CoreGraphics.CGFloat)
+    public typealias RawValue = CoreGraphics.CGFloat
     public var rawValue: CoreGraphics.CGFloat {
       get
     }
@@ -236,24 +246,24 @@ extension UIImage {
   public func compressData(_ quality: UIKit.UIImage.CompressionQuality) -> Foundation.Data?
   public func cached(_ filename: Swift.String)
 }
-extension UIButton {
-  public func sendImageToRight()
+extension UIKit.UIButton {
+  @_Concurrency.MainActor(unsafe) public func sendImageToRight()
 }
-extension UIViewController {
-  public static var className: Swift.String {
+extension UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public static var className: Swift.String {
     get
   }
-  public class func instance() -> UIKit.UIViewController
-  public class func instance(id: Swift.String, storyboard: UIKit.UIStoryboard = UIStoryboard.main) -> UIKit.UIViewController
-  public func hideKeyboardWhenTappedAround()
+  @_Concurrency.MainActor(unsafe) public class func instance<T>() -> T where T : UIKit.UIViewController
+  @_Concurrency.MainActor(unsafe) public class func instance<T>(id: Swift.String, storyboard: UIKit.UIStoryboard = UIStoryboard.main) -> T where T : UIKit.UIViewController
+  @_Concurrency.MainActor(unsafe) public func hideKeyboardWhenTappedAround()
 }
-@objc @_inheritsConvenienceInitializers public class JVAlertController : UIKit.UIAlertController {
-  public class func show(_ msg: Swift.String)
-  public class func show(title: Swift.String, message: Swift.String)
-  public func show()
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class JVAlertController : UIKit.UIAlertController {
+  @_Concurrency.MainActor(unsafe) public class func show(_ msg: Swift.String)
+  @_Concurrency.MainActor(unsafe) public class func show(title: Swift.String, message: Swift.String)
+  @_Concurrency.MainActor(unsafe) public func show()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
 extension JVCore.JVErrorType : Swift.Equatable {}
 extension JVCore.JVErrorType : Swift.Hashable {}
