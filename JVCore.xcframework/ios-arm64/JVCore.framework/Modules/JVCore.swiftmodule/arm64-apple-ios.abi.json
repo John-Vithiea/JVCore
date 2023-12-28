@@ -1017,6 +1017,16 @@
       },
       {
         "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "JVCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -2456,6 +2466,13 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "UITraitChangeObservable",
+            "printedName": "UITraitChangeObservable",
+            "usr": "s:5UIKit23UITraitChangeObservableP",
+            "mangledName": "$s5UIKit23UITraitChangeObservableP"
           }
         ]
       },
@@ -2650,6 +2667,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "UITraitChangeObservable",
+            "printedName": "UITraitChangeObservable",
+            "usr": "s:5UIKit23UITraitChangeObservableP",
+            "mangledName": "$s5UIKit23UITraitChangeObservableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "__DefaultCustomPlaygroundQuickLookable",
             "printedName": "__DefaultCustomPlaygroundQuickLookable",
             "usr": "s:s38__DefaultCustomPlaygroundQuickLookableP",
@@ -2680,15 +2704,23 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "UIStoryboard",
-                "printedName": "UIKit.UIStoryboard",
+                "name": "Optional",
+                "printedName": "UIKit.UIStoryboard?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIStoryboard",
+                    "printedName": "UIKit.UIStoryboard",
+                    "usr": "c:objc(cs)UIStoryboard"
+                  }
+                ],
                 "hasDefaultArg": true,
-                "usr": "c:objc(cs)UIStoryboard"
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:So13UIApplicationC6JVCoreE21setRootViewController_10storyboardySS_So12UIStoryboardCtF",
-            "mangledName": "$sSo13UIApplicationC6JVCoreE21setRootViewController_10storyboardySS_So12UIStoryboardCtF",
+            "usr": "s:So13UIApplicationC6JVCoreE21setRootViewController_10storyboardySS_So12UIStoryboardCSgtF",
+            "mangledName": "$sSo13UIApplicationC6JVCoreE21setRootViewController_10storyboardySS_So12UIStoryboardCSgtF",
             "moduleName": "JVCore",
             "declAttributes": [
               "Custom",
@@ -2700,7 +2732,7 @@
           {
             "kind": "Function",
             "name": "setRootViewController",
-            "printedName": "setRootViewController(_:storyboard:)",
+            "printedName": "setRootViewController(_:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -2712,18 +2744,11 @@
                 "name": "UIViewController",
                 "printedName": "UIKit.UIViewController",
                 "usr": "c:objc(cs)UIViewController"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "UIStoryboard",
-                "printedName": "UIKit.UIStoryboard",
-                "hasDefaultArg": true,
-                "usr": "c:objc(cs)UIStoryboard"
               }
             ],
             "declKind": "Func",
-            "usr": "s:So13UIApplicationC6JVCoreE21setRootViewController_10storyboardySo06UIViewF0C_So12UIStoryboardCtF",
-            "mangledName": "$sSo13UIApplicationC6JVCoreE21setRootViewController_10storyboardySo06UIViewF0C_So12UIStoryboardCtF",
+            "usr": "s:So13UIApplicationC6JVCoreE21setRootViewControlleryySo06UIViewF0CF",
+            "mangledName": "$sSo13UIApplicationC6JVCoreE21setRootViewControlleryySo06UIViewF0CF",
             "moduleName": "JVCore",
             "declAttributes": [
               "Custom",
@@ -3356,6 +3381,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "UITraitChangeObservable",
+            "printedName": "UITraitChangeObservable",
+            "usr": "s:5UIKit23UITraitChangeObservableP",
+            "mangledName": "$s5UIKit23UITraitChangeObservableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "__DefaultCustomPlaygroundQuickLookable",
             "printedName": "__DefaultCustomPlaygroundQuickLookable",
             "usr": "s:s38__DefaultCustomPlaygroundQuickLookableP",
@@ -3536,6 +3568,13 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "UITraitChangeObservable",
+            "printedName": "UITraitChangeObservable",
+            "usr": "s:5UIKit23UITraitChangeObservableP",
+            "mangledName": "$s5UIKit23UITraitChangeObservableP"
           },
           {
             "kind": "Conformance",
@@ -4168,6 +4207,58 @@
             "declAttributes": [
               "AccessControl",
               "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "addHttp",
+            "printedName": "addHttp(isSSL:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:SS6JVCoreE7addHttp5isSSLSSSb_tF",
+            "mangledName": "$sSS6JVCoreE7addHttp5isSSLSSSb_tF",
+            "moduleName": "JVCore",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getYoutubeVideoID",
+            "printedName": "getYoutubeVideoID()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:SS6JVCoreE17getYoutubeVideoIDSSyF",
+            "mangledName": "$sSS6JVCoreE17getYoutubeVideoIDSSyF",
+            "moduleName": "JVCore",
+            "declAttributes": [
+              "AccessControl"
             ],
             "isFromExtension": true,
             "funcSelfKind": "NonMutating"
@@ -4866,6 +4957,13 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "UITraitChangeObservable",
+            "printedName": "UITraitChangeObservable",
+            "usr": "s:5UIKit23UITraitChangeObservableP",
+            "mangledName": "$s5UIKit23UITraitChangeObservableP"
           }
         ]
       },
@@ -6097,36 +6195,31 @@
         "usr": "s:10Foundation4DateV",
         "mangledName": "$s10Foundation4DateV",
         "moduleName": "Foundation",
+        "intro_Macosx": "10.10",
+        "intro_iOS": "8.0",
+        "intro_tvOS": "9.0",
+        "intro_watchOS": "2.0",
+        "declAttributes": [
+          "Available",
+          "Available",
+          "Available",
+          "Available"
+        ],
         "isExternal": true,
         "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "ReferenceConvertible",
-            "printedName": "ReferenceConvertible",
-            "children": [
-              {
-                "kind": "TypeWitness",
-                "name": "ReferenceType",
-                "printedName": "ReferenceType",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "NSDate",
-                    "printedName": "Foundation.NSDate",
-                    "usr": "c:objc(cs)NSDate"
-                  }
-                ]
-              }
-            ],
-            "usr": "s:10Foundation20ReferenceConvertibleP",
-            "mangledName": "$s10Foundation20ReferenceConvertibleP"
-          },
           {
             "kind": "Conformance",
             "name": "Comparable",
             "printedName": "Comparable",
             "usr": "s:SL",
             "mangledName": "$sSL"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
           },
           {
             "kind": "Conformance",
@@ -6141,35 +6234,6 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Strideable",
-            "printedName": "Strideable",
-            "children": [
-              {
-                "kind": "TypeWitness",
-                "name": "Stride",
-                "printedName": "Stride",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Double",
-                    "printedName": "Swift.Double",
-                    "usr": "s:Sd"
-                  }
-                ]
-              }
-            ],
-            "usr": "s:Sx",
-            "mangledName": "$sSx"
           },
           {
             "kind": "Conformance",
@@ -6191,6 +6255,42 @@
             "printedName": "CustomReflectable",
             "usr": "s:s17CustomReflectableP",
             "mangledName": "$ss17CustomReflectableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ReferenceConvertible",
+            "printedName": "ReferenceConvertible",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "ReferenceType",
+                "printedName": "ReferenceType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSDate",
+                    "printedName": "Foundation.NSDate",
+                    "usr": "c:objc(cs)NSDate"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:10Foundation20ReferenceConvertibleP",
+            "mangledName": "$s10Foundation20ReferenceConvertibleP"
           },
           {
             "kind": "Conformance",
@@ -6223,17 +6323,25 @@
           },
           {
             "kind": "Conformance",
-            "name": "Decodable",
-            "printedName": "Decodable",
-            "usr": "s:Se",
-            "mangledName": "$sSe"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Encodable",
-            "printedName": "Encodable",
-            "usr": "s:SE",
-            "mangledName": "$sSE"
+            "name": "Strideable",
+            "printedName": "Strideable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Stride",
+                "printedName": "Stride",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sx",
+            "mangledName": "$sSx"
           }
         ]
       },
@@ -6260,12 +6368,16 @@
             "moduleName": "JVCore",
             "static": true,
             "declAttributes": [
+              "HasInitialValue",
               "Final",
+              "HasStorage",
               "Custom",
               "AccessControl",
               "RawDocComment"
             ],
             "isFromExtension": true,
+            "isLet": true,
+            "hasStorage": true,
             "accessors": [
               {
                 "kind": "Accessor",
@@ -6284,6 +6396,7 @@
                 "mangledName": "$sSo12UIStoryboardC6JVCoreE4mainABvgZ",
                 "moduleName": "JVCore",
                 "static": true,
+                "implicit": true,
                 "declAttributes": [
                   "Final"
                 ],
@@ -6843,6 +6956,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "UITraitChangeObservable",
+            "printedName": "UITraitChangeObservable",
+            "usr": "s:5UIKit23UITraitChangeObservableP",
+            "mangledName": "$s5UIKit23UITraitChangeObservableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "__DefaultCustomPlaygroundQuickLookable",
             "printedName": "__DefaultCustomPlaygroundQuickLookable",
             "usr": "s:s38__DefaultCustomPlaygroundQuickLookableP",
@@ -6920,6 +7040,35 @@
             "declKind": "Func",
             "usr": "s:So7UIImageC6JVCoreE5coloryABSo7UIColorCF",
             "mangledName": "$sSo7UIImageC6JVCoreE5coloryABSo7UIColorCF",
+            "moduleName": "JVCore",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "newHeight",
+            "printedName": "newHeight(for:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CGFloat",
+                "printedName": "CoreGraphics.CGFloat",
+                "usr": "s:14CoreFoundation7CGFloatV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CGFloat",
+                "printedName": "CoreGraphics.CGFloat",
+                "usr": "s:14CoreFoundation7CGFloatV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:So7UIImageC6JVCoreE9newHeight3for14CoreFoundation7CGFloatVAH_tF",
+            "mangledName": "$sSo7UIImageC6JVCoreE9newHeight3for12CoreGraphics7CGFloatVAH_tF",
             "moduleName": "JVCore",
             "declAttributes": [
               "AccessControl",
@@ -7528,6 +7677,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "UITraitChangeObservable",
+            "printedName": "UITraitChangeObservable",
+            "usr": "s:5UIKit23UITraitChangeObservableP",
+            "mangledName": "$s5UIKit23UITraitChangeObservableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "__DefaultCustomPlaygroundQuickLookable",
             "printedName": "__DefaultCustomPlaygroundQuickLookable",
             "usr": "s:s38__DefaultCustomPlaygroundQuickLookableP",
@@ -7634,15 +7790,23 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "UIStoryboard",
-                "printedName": "UIKit.UIStoryboard",
+                "name": "Optional",
+                "printedName": "UIKit.UIStoryboard?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIStoryboard",
+                    "printedName": "UIKit.UIStoryboard",
+                    "usr": "c:objc(cs)UIStoryboard"
+                  }
+                ],
                 "hasDefaultArg": true,
-                "usr": "c:objc(cs)UIStoryboard"
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:So16UIViewControllerC6JVCoreE8instance2id10storyboardxSS_So12UIStoryboardCtABRbzlFZ",
-            "mangledName": "$sSo16UIViewControllerC6JVCoreE8instance2id10storyboardxSS_So12UIStoryboardCtABRbzlFZ",
+            "usr": "s:So16UIViewControllerC6JVCoreE8instance2id10storyboardxSS_So12UIStoryboardCSgtABRbzlFZ",
+            "mangledName": "$sSo16UIViewControllerC6JVCoreE8instance2id10storyboardxSS_So12UIStoryboardCSgtABRbzlFZ",
             "moduleName": "JVCore",
             "genericSig": "<τ_0_0 where τ_0_0 : UIKit.UIViewController>",
             "sugared_genericSig": "<T where T : UIKit.UIViewController>",
@@ -7748,6 +7912,13 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "UITraitChangeObservable",
+            "printedName": "UITraitChangeObservable",
+            "usr": "s:5UIKit23UITraitChangeObservableP",
+            "mangledName": "$s5UIKit23UITraitChangeObservableP"
           }
         ]
       }
@@ -7828,63 +7999,63 @@
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ApplicationManager.swift",
       "kind": "FloatLiteral",
-      "offset": 637,
+      "offset": 602,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ApplicationManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 976,
+      "offset": 941,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ApplicationManager.swift",
       "kind": "StringLiteral",
-      "offset": 1105,
+      "offset": 1070,
       "length": 10,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ApplicationManager.swift",
       "kind": "StringLiteral",
-      "offset": 1114,
+      "offset": 1079,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ApplicationManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 1236,
+      "offset": 1201,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ApplicationManager.swift",
       "kind": "StringLiteral",
-      "offset": 1365,
+      "offset": 1330,
       "length": 10,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ApplicationManager.swift",
       "kind": "StringLiteral",
-      "offset": 1374,
+      "offset": 1339,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ApplicationManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 1624,
+      "offset": 1589,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ApplicationManager.swift",
       "kind": "StringLiteral",
-      "offset": 1689,
+      "offset": 1654,
       "length": 3,
       "value": "\"0\""
     },
@@ -8158,83 +8329,167 @@
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/StringExtension.swift",
       "kind": "StringLiteral",
       "offset": 1168,
-      "length": 8,
-      "value": "\"[^0-9]\""
+      "length": 24,
+      "value": "\"^-?\\d+(\\.\\d{1,2})?$\""
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/StringExtension.swift",
       "kind": "StringLiteral",
-      "offset": 1409,
+      "offset": 1425,
       "length": 49,
       "value": "\"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}\""
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/StringExtension.swift",
       "kind": "IntegerLiteral",
-      "offset": 1588,
+      "offset": 1604,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/StringExtension.swift",
       "kind": "IntegerLiteral",
-      "offset": 1611,
+      "offset": 1627,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/StringExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 1671,
+      "offset": 1687,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/StringExtension.swift",
       "kind": "StringLiteral",
-      "offset": 1875,
+      "offset": 1891,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/StringExtension.swift",
       "kind": "IntegerLiteral",
-      "offset": 2618,
+      "offset": 2634,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/StringExtension.swift",
       "kind": "StringLiteral",
-      "offset": 3161,
+      "offset": 3177,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/StringExtension.swift",
       "kind": "IntegerLiteral",
-      "offset": 3578,
+      "offset": 3594,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/StringExtension.swift",
       "kind": "StringLiteral",
-      "offset": 4035,
+      "offset": 4051,
       "length": 12,
       "value": "\"yyyy-MM-dd\""
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/StringExtension.swift",
       "kind": "StringLiteral",
-      "offset": 4558,
+      "offset": 4574,
       "length": 12,
       "value": "\"yyyy-MM-dd\""
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/StringExtension.swift",
       "kind": "StringLiteral",
-      "offset": 4740,
+      "offset": 4756,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/StringExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4996,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/StringExtension.swift",
+      "kind": "StringLiteral",
+      "offset": 5049,
+      "length": 7,
+      "value": "\"https\""
+    },
+    {
+      "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/StringExtension.swift",
+      "kind": "StringLiteral",
+      "offset": 5072,
+      "length": 6,
+      "value": "\"http\""
+    },
+    {
+      "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/StringExtension.swift",
+      "kind": "StringLiteral",
+      "offset": 5113,
+      "length": 10,
+      "value": "\"https:\/\/\""
+    },
+    {
+      "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/StringExtension.swift",
+      "kind": "StringLiteral",
+      "offset": 5152,
+      "length": 9,
+      "value": "\"http:\/\/\""
+    },
+    {
+      "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/StringExtension.swift",
+      "kind": "StringLiteral",
+      "offset": 5286,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/StringExtension.swift",
+      "kind": "StringLiteral",
+      "offset": 5353,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/StringExtension.swift",
+      "kind": "StringLiteral",
+      "offset": 5423,
+      "length": 63,
+      "value": "\"((?<=(v|V)\/)|(?<=be\/)|(?<=(\\?|\\&)v=)|(?<=embed\/))([\\w-]++)\""
+    },
+    {
+      "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/StringExtension.swift",
+      "kind": "StringLiteral",
+      "offset": 5529,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/StringExtension.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5572,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/StringExtension.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5775,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/StringExtension.swift",
+      "kind": "StringLiteral",
+      "offset": 6112,
       "length": 2,
       "value": "\"\""
     },
@@ -8356,6 +8611,76 @@
       "offset": 1271,
       "length": 2,
       "value": "44"
+    },
+    {
+      "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ColorExtension.swift",
+      "kind": "IntegerLiteral",
+      "offset": 350,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ColorExtension.swift",
+      "kind": "FloatLiteral",
+      "offset": 356,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ColorExtension.swift",
+      "kind": "IntegerLiteral",
+      "offset": 397,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ColorExtension.swift",
+      "kind": "FloatLiteral",
+      "offset": 403,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ColorExtension.swift",
+      "kind": "IntegerLiteral",
+      "offset": 444,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ColorExtension.swift",
+      "kind": "FloatLiteral",
+      "offset": 450,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ColorExtension.swift",
+      "kind": "StringLiteral",
+      "offset": 507,
+      "length": 18,
+      "value": "\"#%02lX%02lX%02lX\""
+    },
+    {
+      "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ColorExtension.swift",
+      "kind": "IntegerLiteral",
+      "offset": 545,
+      "length": 3,
+      "value": "255"
+    },
+    {
+      "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ColorExtension.swift",
+      "kind": "IntegerLiteral",
+      "offset": 570,
+      "length": 3,
+      "value": "255"
+    },
+    {
+      "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ColorExtension.swift",
+      "kind": "IntegerLiteral",
+      "offset": 595,
+      "length": 3,
+      "value": "255"
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/CollectionExtension.swift",
@@ -8717,7 +9042,7 @@
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/StoryboardExtension.swift",
       "kind": "StringLiteral",
-      "offset": 1304,
+      "offset": 1306,
       "length": 2,
       "value": "\"\""
     },
@@ -8948,105 +9273,105 @@
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ImageExtension.swift",
       "kind": "FloatLiteral",
-      "offset": 2241,
+      "offset": 2540,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ImageExtension.swift",
       "kind": "FloatLiteral",
-      "offset": 2264,
+      "offset": 2563,
       "length": 4,
       "value": "0.25"
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ImageExtension.swift",
       "kind": "FloatLiteral",
-      "offset": 2291,
+      "offset": 2590,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ImageExtension.swift",
       "kind": "FloatLiteral",
-      "offset": 2315,
+      "offset": 2614,
       "length": 4,
       "value": "0.75"
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ImageExtension.swift",
       "kind": "FloatLiteral",
-      "offset": 2343,
+      "offset": 2642,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ImageExtension.swift",
       "kind": "FloatLiteral",
-      "offset": 2241,
+      "offset": 2540,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ImageExtension.swift",
       "kind": "FloatLiteral",
-      "offset": 2264,
+      "offset": 2563,
       "length": 4,
       "value": "0.25"
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ImageExtension.swift",
       "kind": "FloatLiteral",
-      "offset": 2291,
+      "offset": 2590,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ImageExtension.swift",
       "kind": "FloatLiteral",
-      "offset": 2315,
+      "offset": 2614,
       "length": 4,
       "value": "0.75"
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ImageExtension.swift",
       "kind": "FloatLiteral",
-      "offset": 2343,
+      "offset": 2642,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ImageExtension.swift",
       "kind": "FloatLiteral",
-      "offset": 2241,
+      "offset": 2540,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ImageExtension.swift",
       "kind": "FloatLiteral",
-      "offset": 2264,
+      "offset": 2563,
       "length": 4,
       "value": "0.25"
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ImageExtension.swift",
       "kind": "FloatLiteral",
-      "offset": 2291,
+      "offset": 2590,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ImageExtension.swift",
       "kind": "FloatLiteral",
-      "offset": 2315,
+      "offset": 2614,
       "length": 4,
       "value": "0.75"
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ImageExtension.swift",
       "kind": "FloatLiteral",
-      "offset": 2343,
+      "offset": 2642,
       "length": 3,
       "value": "1.0"
     },
@@ -9060,14 +9385,14 @@
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ViewControllerExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 1649,
+      "offset": 1658,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/johnvithiea\/Documents\/MyData\/Project\/Frameworks\/JVCore-Source\/JVCore\/Extension\/ViewControllerExtension.swift",
       "kind": "BooleanLiteral",
-      "offset": 1792,
+      "offset": 1801,
       "length": 4,
       "value": "true"
     },

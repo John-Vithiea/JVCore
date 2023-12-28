@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
 // swift-module-flags: -target x86_64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name JVCore
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import Foundation
@@ -8,14 +8,15 @@ import Swift
 import UIKit
 import _Concurrency
 import _StringProcessing
+import _SwiftConcurrencyShims
 extension UIKit.UILabel {
   @_Concurrency.MainActor(unsafe) public func underlineText()
   @_Concurrency.MainActor(unsafe) public func underlineText(_ texts: [Swift.String], color: UIKit.UIColor = UIColor(red: 0, green: 0, blue: 0.933, alpha: 1.0), link: Swift.String? = nil)
   @_Concurrency.MainActor(unsafe) public func setLineSpace(_ space: CoreFoundation.CGFloat = 2.0)
 }
 extension UIKit.UIApplication {
-  @_Concurrency.MainActor(unsafe) public func setRootViewController(_ id: Swift.String, storyboard: UIKit.UIStoryboard = UIStoryboard.main)
-  @_Concurrency.MainActor(unsafe) public func setRootViewController(_ viewController: UIKit.UIViewController, storyboard: UIKit.UIStoryboard = UIStoryboard.main)
+  @_Concurrency.MainActor(unsafe) public func setRootViewController(_ id: Swift.String, storyboard: UIKit.UIStoryboard? = nil)
+  @_Concurrency.MainActor(unsafe) public func setRootViewController(_ viewController: UIKit.UIViewController)
   @_Concurrency.MainActor(unsafe) public func reloadApp()
   @_Concurrency.MainActor(unsafe) public func increaseNotificationBadge()
   @_Concurrency.MainActor(unsafe) public func decreaseNotificationBadge()
@@ -93,6 +94,8 @@ extension Swift.String {
   public func index(of string: Swift.String) -> Swift.Int
   public func toDate(format: Swift.String = "yyyy-MM-dd") -> Foundation.Date?
   public func reformatDate(oldFormat: Swift.String = "yyyy-MM-dd", newFormat: Swift.String) -> Swift.String
+  public func addHttp(isSSL: Swift.Bool = false) -> Swift.String
+  public func getYoutubeVideoID() -> Swift.String
 }
 public enum JVErrorType {
   case data
@@ -209,9 +212,7 @@ public struct Device {
   @objc deinit
 }
 extension UIKit.UIStoryboard {
-  @_Concurrency.MainActor(unsafe) public static var main: UIKit.UIStoryboard {
-    get
-  }
+  @_Concurrency.MainActor(unsafe) public static let main: UIKit.UIStoryboard
 }
 extension UIKit.UIView {
   @_Concurrency.MainActor(unsafe) public static var className: Swift.String {
@@ -232,6 +233,7 @@ extension UIKit.UIView {
 extension UIKit.UIImage {
   public func addBorder(width: CoreFoundation.CGFloat = 1.0, color: UIKit.UIColor = .lightGray) -> UIKit.UIImage?
   public func color(_ color: UIKit.UIColor) -> UIKit.UIImage
+  public func newHeight(for width: CoreFoundation.CGFloat) -> CoreFoundation.CGFloat
   public enum CompressionQuality : CoreFoundation.CGFloat {
     case lowest
     case low
@@ -256,7 +258,7 @@ extension UIKit.UIViewController {
     get
   }
   @_Concurrency.MainActor(unsafe) public class func instance<T>() -> T where T : UIKit.UIViewController
-  @_Concurrency.MainActor(unsafe) public class func instance<T>(id: Swift.String, storyboard: UIKit.UIStoryboard = UIStoryboard.main) -> T where T : UIKit.UIViewController
+  @_Concurrency.MainActor(unsafe) public class func instance<T>(id: Swift.String, storyboard: UIKit.UIStoryboard? = nil) -> T where T : UIKit.UIViewController
   @_Concurrency.MainActor(unsafe) public func hideKeyboardWhenTappedAround()
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class JVAlertController : UIKit.UIAlertController {
