@@ -127,6 +127,11 @@ extension UIKit.UINavigationController {
 extension UIKit.UINavigationItem {
   @_Concurrency.MainActor(unsafe) public func setTitle(_ title: Swift.String, color: UIKit.UIColor, font: UIKit.UIFont)
 }
+extension UIKit.UIColor {
+  public var hexValue: Swift.String {
+    get
+  }
+}
 extension Swift.Collection {
   public subscript(safe index: Self.Index) -> Self.Element? {
     get
